@@ -3,7 +3,9 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 
+from cmsplugin_markdown.widgets import BootstrapMarkdownWidget
 from cmsplugin_markdown.models import MarkdownPlugin
+from django.db import models
 
 
 class MarkdownCMSPlugin(CMSPluginBase):
@@ -11,6 +13,9 @@ class MarkdownCMSPlugin(CMSPluginBase):
     name = _('Markdown')
     render_template = 'cmsplugin_markdown/markdown.html'
     change_form_template = 'cmsplugin_markdown/change_form.html'
+    formfield_overrides = {
+        models.TextField: {'widget': BootstrapMarkdownWidget},
+    }
 
     def render(self, context, instance, placeholder):
         context['text'] = instance.markdown_text

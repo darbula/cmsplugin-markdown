@@ -14,7 +14,7 @@ You need to install the following prerequisites in order to use this app::
     pip install django-cms
     pip install South
     pip install Markdown
-    pip install django-markwhat
+    pip install django-markup
 
 If you want to install the latest stable release from PyPi::
 
@@ -28,7 +28,7 @@ Add ``cmsplugin_markdown`` and ``django_markwhat`` to your ``INSTALLED_APPS``::
 
     INSTALLED_APPS = (
         ...,
-        'django_markwhat',
+        'django_markup',
         'cmsplugin_markdown',
     )
 
