@@ -1,6 +1,6 @@
 from django.forms.widgets import Textarea
 from django.utils.html import format_html
-from django.forms.util import flatatt
+from django.forms.utils import flatatt
 from django.utils.encoding import force_text
 
 
